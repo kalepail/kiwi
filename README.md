@@ -8,9 +8,11 @@ Take Kimono's structured APIs and output them into Statamic.
 [Watch the video.](http://youtu.be/NWgiuPgXdvc)
 
 ## Example
-	<div id="kiwi">
-		{{ kiwi key="your-account-key" id="your-api-id" collection="your-collection-name" }}
-			<h1>{{ title }}</h1>
-			<p>{{ body }}</p>
-		{{ /kiwi }}
-	</div>
+	<section id="kiwi">
+	  {{ kiwi id="your-app-id" collection="collection-name" }}
+	    <article class="post">
+	      <h1>{{ title:text }}</h1>
+	      <p>{{ body:text }}</p>
+	    </article>
+	  {{ /kiwi }}
+	</section>

@@ -11,18 +11,20 @@ class Plugin_kiwi extends Plugin {
 
 	public function index() {
 		
-		$key = $this->fetchParam('key');
 		$id = $this->fetchParam('id');
+		$key = $this->config['key'];
 		$collection = $this->fetchParam('collection');
 		
-		$request = "http://www.kimonolabs.com/api/".$id."?apikey=".$key."";
+		$request = "http://www.kimonolabs.com/api/".$id."?apikey=".$key;
 		$response = file_get_contents($request);
 		$results = json_decode($response, TRUE);
 		
-		$count = $results['count'];
-		
 		$results = $results['results'];		
 		$results = $results[$collection];
+		
+//		echo("<pre>");
+//		print_r($results);
+//		echo("</pre>");
 		
 		$output = "";
 		
