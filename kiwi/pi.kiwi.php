@@ -4,7 +4,7 @@ class Plugin_kiwi extends Plugin {
 	var $meta = array(
 	  'name'        => 'kiwi',
 	  'description' => 'Take Kimono\'s structured APIs and output them into Statamic',
-	  'version'     => '1.0',
+	  'version'     => '1.1',
 	  'author'      => '@tyvdh (Tyler van der Hoeven)',
 	  'author_url'  => 'http://tylervdh.com'
 	);
