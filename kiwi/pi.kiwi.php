@@ -19,19 +19,12 @@ class Plugin_kiwi extends Plugin {
 		$response = file_get_contents($request);
 		$results = json_decode($response, TRUE);
 		
-		$results = $results['results'];		
-		$results = $results[$collection];
+		$results = array_get($results, 'results:'.$collection);
 		
 //		echo("<pre>");
 //		print_r($results);
-//		echo("</pre>");
+//		echo("</pre>");	
 		
-		$output = "";
-		
-		foreach ($results as $result) {
-			$output .= Parse::template($this->content, $result);	
-		}	
-		
-		return $output;
+		return Parse::tagLoop($this->content, $results, true);
 	}
 }
